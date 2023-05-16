@@ -26,6 +26,7 @@ function App() {
     setItems(prev => {
       return prev.filter(item => item.name !== name)
     })
+    alert('Запись была успешно удалена')
   }
 
   return (
