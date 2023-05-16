@@ -22,6 +22,12 @@ function App() {
     setDesc('')
   }
 
+  const onDeleteHandler = (name) => {
+    setItems(prev => {
+      return prev.filter(item => item.name !== name)
+    })
+  }
+
   return (
     <div className='container'>
       <h1>Приложение заметок</h1>
@@ -36,6 +42,7 @@ function App() {
           <div className='card'>
             <h3>{item.name}</h3>
             <p>{item.desc}</p>
+            <button onClick={onDeleteHandler}>Удалить запись</button>
           </div>
         ))
       }
